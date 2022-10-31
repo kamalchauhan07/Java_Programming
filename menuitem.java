@@ -97,6 +97,14 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao
 		}
 		
 	}
+	public void testModifyMenuItem()
+	{
+		MenuItem menuItem = new MenuItem(1,"sandwich",99.0f,true,DateUtil.convertToDate("15/03/2017"),"Main Course",true);
+		MenuItemDao menuItemDao = new MenuItemDaoCollectionImpl();
+		menuItemDao.modifyMenuItem(menuItem);
+		menuItemDao.getMenuItem(menuItem.getId());
+		System.out.println("Details are Modified");
+	}
 
 	@Override
 	public MenuItem getMenuItem(long menuItemId) {
